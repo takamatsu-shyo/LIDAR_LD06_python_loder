@@ -1,5 +1,19 @@
 # LIDAR_LD06_python_loder
-LDROBOT社から提供されているLidarのLD06(LDS06)をpythonから使えるようにしてみました。このサンプルコードは取得した点群をリアルタイムにmatplotlibにて表示します。
+A sample code for LD06 LiDAR by LDROBOT.
+
+# How to use
+1. Clone this repository and change `Serial(port='/dev/ttyUSB0'...)` in main.py to your own port.
+2. Run `pip install -r requirements.txt` in a venv environment.
+3. Run `python main.py`.
+4. Press the E key to exit.
+
+# About LD06
+Data Manual, Development Manual, SDK (ROS)
+- https://www.ldrobot.com/download/en/98
+
+
+# LIDAR_LD06_python_loder
+LDROBOT社から販売されているLidarのLD06(LDS06)をPythonから使えるようにしてみました。このサンプルコードは取得した点群をリアルタイムにmatplotlibにて表示します。
 
 # つかいかた
 1. このリポジトリをcloneし、main.pyのSerial(port='/dev/tty.usbserial-0001'...を自身のポートに変更する。
@@ -11,5 +25,3 @@ LDROBOT社から提供されているLidarのLD06(LDS06)をpythonから使える
 - LD06(LDS06)入手先 https://www.inno-maker.com/product/lidar-ld06/
 - (データシート、SDKなど) http://wiki.inno-maker.com/display/HOMEPAGE/LD06
 
-# ライセンス
-Please see [LICENSE](https://github.com/henjin0/LIDAR_LD06_python_loder/blob/main/LICENSE).

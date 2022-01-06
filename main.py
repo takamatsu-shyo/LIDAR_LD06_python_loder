@@ -4,14 +4,25 @@ from CalcLidarData import CalcLidarData
 import matplotlib.pyplot as plt
 import math
 
-fig = plt.figure(figsize=(8,8))
+COLOR = 'cyan'
+plt.rcParams['text.color'] = COLOR
+plt.rcParams['axes.labelcolor'] = COLOR
+plt.rcParams['xtick.color'] = COLOR
+plt.rcParams['ytick.color'] = COLOR
+
+fig = plt.figure(facecolor='black', figsize=(8,8))
 ax = fig.add_subplot(111, projection='polar')
-ax.set_title('lidar (exit: Key E)',fontsize=18)
+ax.set_title('LiDAR LD06 (exit: e)',fontsize=18)
+ax.set_facecolor('navy')
+ax.set_ylim([0,20])
+ax.xaxis.grid(True,color='blue',linestyle='dashed')
+ax.yaxis.grid(True,color='blue',linestyle='dashed')
+
 
 # Eキーを押すと終了します。
 plt.connect('key_press_event', lambda event: exit(1) if event.key == 'e' else None)
 
-ser = serial.Serial(port='/dev/tty.usbserial-0001',
+ser = serial.Serial(port='/dev/ttyUSB0',
                     baudrate=230400,
                     timeout=5.0,
                     bytesize=8,
@@ -31,7 +42,7 @@ while True:
     if(i % 40 == 39):
         if('line' in locals()):
             line.remove()
-        line = ax.scatter(angles, distances, c="pink", s=5)
+        line = ax.scatter(angles, distances, c="cyan", s=5)
 
         ax.set_theta_offset(math.pi / 2)
         plt.pause(0.01)
