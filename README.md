@@ -1,6 +1,8 @@
 # LIDAR_LD06_python_loder
 A sample code for LD06 LiDAR by LDROBOT.
 
+![Figure_1](https://user-images.githubusercontent.com/4463168/148444710-f4115412-dc99-4215-97a4-c43e471a2a62.png)
+
 # How to use
 1. Clone this repository and change `Serial(port='/dev/ttyUSB0'...)` in main.py to your own port.
 2. Run `pip install -r requirements.txt` in a venv environment.
